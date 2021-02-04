@@ -1,7 +1,7 @@
 const 
   apiKey = 'c6d3274323a8201fd1939ef229fc0078',
   exclude = 'current,hourly,daily,alerts',
-  list = document.querySelector('ul'),
+  table = document.querySelector('table'),
   form = document.querySelector('form')
 
 form.addEventListener('submit', (e) => {
@@ -39,9 +39,18 @@ const displayAllMinuteData = (data) => {
       minute = t.getMinutes() + index >= 60 ? t.getMinutes()+index - 60 : t.getMinutes() + index,
       formattedMinute = minute < 10 ? `0${minute}` : minute,
       hour = t.getMinutes() + index >= 60 ? t.getHours() + 1 : t.getHours()
+      
+    const 
+      tr = document.createElement('tr'),
+      tableTime = document.createElement('td'),
+      tableRain = document.createElement('td')
 
-    const li = document.createElement('li')
-    li.innerHTML = `${hour}:${formattedMinute}: ${data.precipitation}mm`
-    list.appendChild(li)
+    tableTime.innerHTML = `${hour}:${formattedMinute}`
+    tableRain.innerHTML = `${data.precipitation}mm`
+
+    tr.appendChild(tableTime)
+    tr.appendChild(tableRain)
+
+    table.appendChild(tr)
   }) 
 }
