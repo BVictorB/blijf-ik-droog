@@ -2,6 +2,14 @@ table, td {
   border: 1px solid black;
 }
 
+table {
+  margin-top: 12px;
+}
+
+td {
+  padding: 6px;
+}
+
 tr:nth-child(even) {
   background: lightgray;
 }
