@@ -32,6 +32,7 @@ const fetchWeatherData = (lat, lon) => {
 }
 
 const displayAllMinuteData = (data) => {
+  table.innerHTML = ''
   const t = new Date()
 
   data.forEach((data, index) => {
