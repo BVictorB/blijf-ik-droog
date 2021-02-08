@@ -1,5 +1,6 @@
 import getData from './modules/getData'
 import renderMinuteData from './modules/renderMinuteData'
+import calcDryMinutes from './modules/calcDryMinutes'
 import getCoords from './modules/getCoords'
 
 const 
@@ -10,11 +11,15 @@ const
 form.addEventListener('submit', (e) => {
   e.preventDefault()
 
-  const city = e.target.querySelector('input').value
+  const city = e.target.querySelectorAll('input')[0].value
+  const neededMinutes = e.target.querySelectorAll('input')[1].value
 
   getCoords(city)
     .then(coords => {
       getData(`https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lng}&exclude=${exclude}&appid=${apiKey}`)
-        .then(data => renderMinuteData(data.minutely))
+        .then(data => {
+          console.log(calcDryMinutes(data.minutely, neededMinutes))
+          renderMinuteData(data.minutely)
+        })
     })
 })
