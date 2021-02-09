@@ -1,15 +1,99 @@
-table, td {
-  border: 1px solid black;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
-table {
-  margin-top: 12px;
+body {
+  background-color: #CAF0F8;
 }
 
-td {
-  padding: 6px;
+header {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px;
+  height: 300px;
 }
 
-tr:nth-child(even) {
-  background: lightgray;
+header img {
+  position: absolute;
+  top: 24px;
+  transform: rotate(-25deg) translateX(-110px);
+  width: 150px;
+  transition: top 200ms ease-in-out;
+}
+
+header img:hover {
+  top: 8px;
+}
+
+h1:hover + img {
+  top: 8px;
+}
+
+h1 {
+  margin-top: 72px;
+  font-size: 72px;
+}
+
+h2 {
+  margin-top: 24px;
+}
+
+main {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+input[type="text"] {
+  display: block;
+  height: 64px;
+  width: 256px;
+  font-size: 20px;
+  border-radius: 32px;
+  padding: 0 16px;
+  margin: 6px 0 12px;
+  border: 2px solid black;
+}
+
+input[type="text"]:focus {
+  outline: 0;
+  border: 2px solid teal;
+}
+
+button {
+  background-color: teal;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 24px;
+  cursor: pointer;
+  border: 1px solid teal;
+}
+
+button:hover {
+  background-color: rgb(0, 80, 80);
+}
+
+button:focus {
+  outline: 0;
+  border: 1px solid rgb(0, 51, 51);
+}
+
+label {
+  position: relative;
+}
+
+.geolocation {
+  cursor: pointer;
+  width: 48px;
+  position: absolute;
+  top: 32px;
+  left: 200px;
 }

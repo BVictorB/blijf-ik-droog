@@ -10,13 +10,13 @@ const renderOutcome = (minutes) => {
       departTime = new Date(currentDate.getTime() + minutes * 60000),
       formatDepartTime = departTime.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})
 
-    const feedbackText = createElement('h1', {
-      text: `You should leave at ${formatDepartTime} to stay dry`
+    const feedbackText = createElement('h2', {
+      text: `Als je om ${formatDepartTime} vertrekt blijf je droog.`
     })
     container.appendChild(feedbackText)
   } else {
-    const feedbackText = createElement('h1', {
-      text: `There is not enough time to stay dry`
+    const feedbackText = createElement('h2', {
+      text: `Je kan het komende uur niet vertrekken zonder nat te worden.`
     })
     container.appendChild(feedbackText)
   }
