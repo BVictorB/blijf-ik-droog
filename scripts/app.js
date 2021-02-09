@@ -1,5 +1,5 @@
 import getData from './modules/getData'
-import renderMinuteData from './modules/renderMinuteData'
+import renderOutcome from './modules/renderOutcome'
 import calcDryMinutes from './modules/calcDryMinutes'
 import getCoords from './modules/getCoords'
 
@@ -18,8 +18,7 @@ form.addEventListener('submit', (e) => {
     .then(coords => {
       getData(`https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lng}&exclude=${exclude}&appid=${apiKey}`)
         .then(data => {
-          console.log(calcDryMinutes(data.minutely, neededMinutes))
-          renderMinuteData(data.minutely)
+          renderOutcome(calcDryMinutes(data.minutely, neededMinutes))
         })
     })
 })
