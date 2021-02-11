@@ -6,19 +6,19 @@ import getGeoLocation from './modules/getGeoLocation'
 import { weatherAPIKey, weatherEndpoint, exclude } from './config/api'
 import { form, geoButton, city, neededMinutes } from './config/elements'
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', async (e) => {
   e.preventDefault()
 
-  getCoords(city.value)
-    .then(coords => {
-      getData(`${weatherEndpoint}lat=${coords.lat}&lon=${coords.lng}&exclude=${exclude}&appid=${weatherAPIKey}`)
-        .then(data => {
-          renderOutcome(calcDryMinutes(data.minutely, neededMinutes.value))
-        })
-    })
+  const 
+    coords = await getCoords(city.value),
+    weatherURL = `${weatherEndpoint}lat=${coords.lat}&lon=${coords.lng}&exclude=${exclude}&appid=${weatherAPIKey}`,
+    weatherData = await getData(weatherURL),
+    dryMinutes = calcDryMinutes(weatherData.minutely, neededMinutes.value)
+  
+  renderOutcome(dryMinutes)
 })
 
 geoButton.addEventListener('click', () => {
-  console.log('Loading...')
+  geoButton.classList.add('loading')
   navigator.geolocation.getCurrentPosition(getGeoLocation)
 })

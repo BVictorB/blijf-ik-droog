@@ -1,17 +1,17 @@
 import getData from './getData'
-import renderOutcome from './renderOutcome'
-import calcDryMinutes from './calcDryMinutes'
-import { weatherAPIKey, exclude } from '../config/api'
-import { neededMinutes } from '../config/elements'
+import { locationAPIKey, locationEndpoint } from '../config/api'
+import { city, geoButton } from '../config/elements'
 
 const getGeoLocation = (position) => {
   const 
     lat = position.coords.latitude,
     lng = position.coords.longitude
+  
+  geoButton.classList.remove('loading')
 
-  getData(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&exclude=${exclude}&appid=${weatherAPIKey}`)
+  getData(`${locationEndpoint}q=${lat}+${lng}&key=${locationAPIKey}`)
     .then(data => {
-      renderOutcome(calcDryMinutes(data.minutely, neededMinutes.value))
+      city.value = data.results[0].components.city
     })
 }
 
