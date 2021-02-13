@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: #CAF0F8;
+}
+
+header {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px;
+  height: 300px;
+}
+
+header img {
+  position: absolute;
+  top: 24px;
+  transform: rotate(-25deg) translateX(-110px);
+  width: 150px;
+  transition: top 200ms ease-in-out;
+}
+
+header img:hover {
+  top: 8px;
+}
+
+h1:hover + img {
+  top: 8px;
+}
+
+h1 {
+  margin-top: 72px;
+  font-size: 72px;
+}
+
+h2 {
+  margin-top: 24px;
+}
+
+main {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+input {
+  display: block;
+  height: 64px;
+  width: 256px;
+  font-size: 20px;
+  border-radius: 24px;
+  padding: 0 16px;
+  margin: 6px 0 12px;
+  border: 2px solid #03045E;
+}
+
+input:focus {
+  outline: 0;
+  border: 2px solid #010229;
+}
+
+button {
+  background-color: #03045E;
+  border: none;
+  color: white;
+  height: 64px;
+  width: 256px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 24px;
+  cursor: pointer;
+  border: 1px solid #03045E;
+}
+
+button:hover, button:focus {
+  outline: 0;
+  background-color: #010229;
+}
+
+label {
+  position: relative;
+}
+
+.geolocation {
+  cursor: pointer;
+  width: 32px;
+  position: absolute;
+  top: 40px;
+  left: 208px;
+}
+
+.result-image {
+  margin-top: 24px;
+  width: 100px;
+}
+
+.loading {
+  animation: loading 1s infinite;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=/styles.956d002c.css.map */
