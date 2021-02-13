@@ -159,9 +159,9 @@ const createElement = (tag, _ref) => {
 var _default = createElement;
 exports.default = _default;
 },{}],"images/wet-shirt.png":[function(require,module,exports) {
-module.exports = "/wet-shirt.f2b431d2.png";
+module.exports = "wet-shirt.f2b431d2.png";
 },{}],"images/dry-shirt.png":[function(require,module,exports) {
-module.exports = "/dry-shirt.31488741.png";
+module.exports = "dry-shirt.31488741.png";
 },{}],"scripts/modules/renderOutcome.js":[function(require,module,exports) {
 "use strict";
 
@@ -389,7 +389,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54555" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55044" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -566,4 +566,4 @@ function hmrAcceptRun(bundle, id) {
   }
 }
 },{}]},{},["../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","scripts/app.js"], null)
-//# sourceMappingURL=/app.c09d0a7b.js.map
+//# sourceMappingURL=app.c09d0a7b.js.map
