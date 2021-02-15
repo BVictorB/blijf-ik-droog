@@ -145,23 +145,41 @@ const createElement = (tag, _ref) => {
     text,
     src,
     href,
-    children
+    children,
+    parent
   } = _ref;
   const el = document.createElement(tag);
-  classNames ? classNames.forEach(className => el.classList.add(className)) : null;
-  text ? el.innerText = text : null;
-  src ? el.src = src : null;
-  href ? el.href = href : null;
-  children ? children.forEach(child => el.appendChild(child)) : null;
+  classNames && classNames.forEach(className => el.classList.add(className));
+  text && (el.innerText = text);
+  src && (el.src = src);
+  href && (el.href = href);
+  children && children.forEach(child => el.appendChild(child));
+  parent && parent.appendChild(el);
   return el;
 };
 
 var _default = createElement;
 exports.default = _default;
+},{}],"scripts/modules/removeChildren.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+const removeChildren = parent => {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+};
+
+var _default = removeChildren;
+exports.default = _default;
 },{}],"images/wet-shirt.png":[function(require,module,exports) {
-module.exports = "wet-shirt.f2b431d2.png";
+module.exports = "/wet-shirt.f2b431d2.png";
 },{}],"images/dry-shirt.png":[function(require,module,exports) {
-module.exports = "dry-shirt.31488741.png";
+module.exports = "/dry-shirt.31488741.png";
 },{}],"scripts/modules/renderOutcome.js":[function(require,module,exports) {
 "use strict";
 
@@ -172,6 +190,8 @@ exports.default = void 0;
 
 var _createElement = _interopRequireDefault(require("./createElement"));
 
+var _removeChildren = _interopRequireDefault(require("./removeChildren"));
+
 var _wetShirt = _interopRequireDefault(require("../../images/wet-shirt.png"));
 
 var _dryShirt = _interopRequireDefault(require("../../images/dry-shirt.png"));
@@ -180,40 +200,27 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const renderOutcome = minutes => {
   const container = document.querySelector('.result');
-  container.innerHTML = '';
-
-  if (minutes) {
-    const currentDate = new Date(),
-          departTime = new Date(currentDate.getTime() + (minutes - 1) * 60000),
-          formatDepartTime = departTime.toLocaleTimeString([], {
-      hour: '2-digit',
-      minute: '2-digit'
-    });
-    const feedbackText = (0, _createElement.default)('h2', {
-      text: "Als je om ".concat(formatDepartTime, " vertrekt blijf je droog.")
-    });
-    const feedbackImage = (0, _createElement.default)('img', {
-      src: _dryShirt.default,
-      classNames: ['result-image']
-    });
-    container.appendChild(feedbackText);
-    container.appendChild(feedbackImage);
-  } else {
-    const feedbackText = (0, _createElement.default)('h2', {
-      text: "Je kan het komende uur niet vertrekken zonder nat te worden."
-    });
-    const feedbackImage = (0, _createElement.default)('img', {
-      src: _wetShirt.default,
-      classNames: ['result-image']
-    });
-    container.appendChild(feedbackText);
-    container.appendChild(feedbackImage);
-  }
+  (0, _removeChildren.default)(container);
+  const currentDate = new Date(),
+        departTime = new Date(currentDate.getTime() + (minutes - 1) * 60000),
+        formatDepartTime = departTime.toLocaleTimeString([], {
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+  (0, _createElement.default)('h2', {
+    text: minutes ? "Als je om ".concat(formatDepartTime, " vertrekt blijf je droog.") : "Je kan het komende uur niet vertrekken zonder nat te worden.",
+    parent: container
+  });
+  (0, _createElement.default)('img', {
+    src: minutes ? _dryShirt.default : _wetShirt.default,
+    classNames: ['result-image'],
+    parent: container
+  });
 };
 
 var _default = renderOutcome;
 exports.default = _default;
-},{"./createElement":"scripts/modules/createElement.js","../../images/wet-shirt.png":"images/wet-shirt.png","../../images/dry-shirt.png":"images/dry-shirt.png"}],"scripts/modules/calcDryMinutes.js":[function(require,module,exports) {
+},{"./createElement":"scripts/modules/createElement.js","./removeChildren":"scripts/modules/removeChildren.js","../../images/wet-shirt.png":"images/wet-shirt.png","../../images/dry-shirt.png":"images/dry-shirt.png"}],"scripts/modules/calcDryMinutes.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -222,12 +229,12 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 const calcDryMinutes = (data, neededMinutes) => {
+  let minuteAmount = 0,
+      firstMinute = null;
   const dryMinutes = data.reduce((array, minute, index) => {
-    minute.precipitation === 0 ? array.push(index) : null;
+    minute.precipitation === 0 && array.push(index);
     return array;
   }, []);
-  let minuteAmount = 0;
-  let firstMinute = null;
   dryMinutes.forEach((dryMinute, index) => {
     if (minuteAmount >= neededMinutes) {
       return;
@@ -389,7 +396,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55044" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51357" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -566,4 +573,4 @@ function hmrAcceptRun(bundle, id) {
   }
 }
 },{}]},{},["../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","scripts/app.js"], null)
-//# sourceMappingURL=app.c09d0a7b.js.map
+//# sourceMappingURL=/app.c09d0a7b.js.map

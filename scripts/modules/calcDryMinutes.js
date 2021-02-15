@@ -1,11 +1,12 @@
 const calcDryMinutes = (data, neededMinutes) => {
+  let 
+    minuteAmount = 0,
+    firstMinute = null
+
   const dryMinutes = data.reduce((array, minute, index) => {
-    minute.precipitation === 0 ? array.push(index) : null
+    minute.precipitation === 0 && array.push(index)
     return array
   }, [])
-
-  let minuteAmount = 0
-  let firstMinute = null
 
   dryMinutes.forEach((dryMinute, index) => {
     if (minuteAmount >= neededMinutes) { return }

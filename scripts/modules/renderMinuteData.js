@@ -1,9 +1,11 @@
+import removeChildren from './removeChildren'
+
 const renderMinuteData = (data) => {
   const 
     table = document.querySelector('table'),
     currentDate = new Date()
 
-  table.innerHTML = ''
+  removeChildren(table)
 
   if (data) {
     data.forEach((data, index) => {

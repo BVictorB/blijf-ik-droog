@@ -1,37 +1,27 @@
 import createElement from './createElement'
+import removeChildren from './removeChildren'
 import wetShirt from '../../images/wet-shirt.png'
 import dryShirt from '../../images/dry-shirt.png'
 
 const renderOutcome = (minutes) => {
   const container = document.querySelector('.result')
-  container.innerHTML = ''
+  removeChildren(container)
 
-  if (minutes) {
-    const
-      currentDate = new Date(),
-      departTime = new Date(currentDate.getTime() + (minutes - 1) * 60000),
-      formatDepartTime = departTime.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})
+  const
+    currentDate = new Date(),
+    departTime = new Date(currentDate.getTime() + (minutes - 1) * 60000),
+    formatDepartTime = departTime.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})
+  
+  createElement('h2', {
+    text: minutes ? `Als je om ${formatDepartTime} vertrekt blijf je droog.` : `Je kan het komende uur niet vertrekken zonder nat te worden.`,
+    parent: container
+  })
 
-    const feedbackText = createElement('h2', {
-      text: `Als je om ${formatDepartTime} vertrekt blijf je droog.`
-    })
-    const feedbackImage = createElement('img', {
-      src: dryShirt,
-      classNames: ['result-image']
-    })
-    container.appendChild(feedbackText)
-    container.appendChild(feedbackImage)
-  } else {
-    const feedbackText = createElement('h2', {
-      text: `Je kan het komende uur niet vertrekken zonder nat te worden.`
-    })
-    const feedbackImage = createElement('img', {
-      src: wetShirt,
-      classNames: ['result-image']
-    })
-    container.appendChild(feedbackText)
-    container.appendChild(feedbackImage)
-  }
+  createElement('img', {
+    src: minutes ? dryShirt : wetShirt,
+    classNames: ['result-image'],
+    parent: container
+  })
 }
 
 export default renderOutcome
