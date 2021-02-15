@@ -1,13 +1,13 @@
 import getData from './getData'
 import { locationAPIKey, locationEndpoint } from '../config/api'
-import { city, geoButton } from '../config/elements'
+import { city, loading } from '../config/elements'
 
 const getGeoLocation = (position) => {
   const 
     lat = position.coords.latitude,
     lng = position.coords.longitude
   
-  geoButton.classList.remove('loading')
+  loading.classList.remove('loading')
 
   getData(`${locationEndpoint}q=${lat}+${lng}&key=${locationAPIKey}`)
     .then(data => {

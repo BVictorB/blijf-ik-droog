@@ -4,10 +4,11 @@ import calcDryMinutes from './modules/calcDryMinutes'
 import getCoords from './modules/getCoords'
 import getGeoLocation from './modules/getGeoLocation'
 import { weatherAPIKey, weatherEndpoint, exclude } from './config/api'
-import { form, geoButton, city, neededMinutes } from './config/elements'
+import { form, geoButton, city, neededMinutes, loading } from './config/elements'
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault()
+  loading.classList.add('loading')
 
   const 
     coords = await getCoords(city.value),
@@ -19,6 +20,6 @@ form.addEventListener('submit', async (e) => {
 })
 
 geoButton.addEventListener('click', () => {
-  geoButton.classList.add('loading')
+  loading.classList.add('loading')
   navigator.geolocation.getCurrentPosition(getGeoLocation)
 })

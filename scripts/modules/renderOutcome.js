@@ -1,5 +1,6 @@
 import createElement from './createElement'
 import removeChildren from './removeChildren'
+import { loading } from '../config/elements'
 import wetShirt from '../../images/wet-shirt.png'
 import dryShirt from '../../images/dry-shirt.png'
 
@@ -22,6 +23,8 @@ const renderOutcome = (minutes) => {
     classNames: ['result-image'],
     parent: container
   })
+
+  loading.classList.remove('loading')
 }
 
 export default renderOutcome
