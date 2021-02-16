@@ -1,24 +1,11 @@
 import { home, location, about } from '../views'
+import { navigator, handleRoute } from './'
 
 const router = () => {
-  const 
-    view = document.querySelector('.view'),
-    buttons = document.querySelectorAll('[route]')
-  
-  const navigator = (e) => {
-    const routePath = e.target.attributes.route.value
-    const routeInfo = routes.filter((route) => route.path === routePath)[0]
-
-    if (!routeInfo) {
-      view.innerHTML = '404'
-    } else {
-      window.history.pushState({}, '', routeInfo.path)
-      handleRoute()
-    }
-  }
+  const buttons = document.querySelectorAll('[route]')
   
   buttons.forEach((button) => {
-    button.addEventListener('click', navigator)
+    button.addEventListener('click', e => navigator(e, routes))
   })
   
   const routes = [
@@ -39,13 +26,7 @@ const router = () => {
     }
   ]
   
-  const handleRoute = () => {
-    const currentPath = window.location.pathname
-    const route = routes.filter((route) => route.path === currentPath)[0]
-    route ? route.view() : console.log('404')
-  }
-  
-  handleRoute() 
+  handleRoute(routes) 
 }
 
 export default router

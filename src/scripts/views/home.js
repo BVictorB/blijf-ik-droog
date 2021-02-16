@@ -1,9 +1,5 @@
-import getData from '../modules/getData'
-import renderOutcome from '../modules/renderOutcome'
-import calcDryMinutes from '../modules/calcDryMinutes'
-import getCoords from '../modules/getCoords'
-import getGeoLocation from '../modules/getGeoLocation'
-import { weatherAPIKey, weatherEndpoint, exclude } from '../config/api'
+import { getData, renderOutcome, calcDryMinutes, getCoords, getCity } from '../modules'
+import { weatherAPIKey, weatherEndpoint, exclude } from '../config'
 import geoLocationImage from '../../images/location.png'
 
 const home = () => {
@@ -32,7 +28,9 @@ const home = () => {
   
   geoButton.addEventListener('click', () => {
     loading.classList.add('loading')
-    navigator.geolocation.getCurrentPosition(getGeoLocation)
+    navigator.geolocation.getCurrentPosition(async (pos) => {
+      city.value = await getCity(pos.coords.latitude, pos.coords.longitude)
+    })
   })
 }
 

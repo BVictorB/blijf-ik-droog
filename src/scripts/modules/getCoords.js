@@ -1,5 +1,5 @@
-import getData from './getData'
-import { locationAPIKey, locationEndpoint } from '../config/api'
+import { getData } from './'
+import { locationAPIKey, locationEndpoint } from '../config'
 
 const getCoords = (place) => {
   const url = `${locationEndpoint}q=${place}&key=${locationAPIKey}`

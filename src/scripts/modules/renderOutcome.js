@@ -1,5 +1,4 @@
-import createElement from './createElement'
-import removeChildren from './removeChildren'
+import { createElement, removeChildren } from './'
 import wetShirt from '../../images/wet-shirt.png'
 import dryShirt from '../../images/dry-shirt.png'
 
