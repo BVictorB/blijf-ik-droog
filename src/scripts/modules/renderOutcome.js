@@ -1,11 +1,13 @@
 import createElement from './createElement'
 import removeChildren from './removeChildren'
-import { loading } from '../config/elements'
 import wetShirt from '../../images/wet-shirt.png'
 import dryShirt from '../../images/dry-shirt.png'
 
 const renderOutcome = (minutes) => {
-  const container = document.querySelector('.result')
+  const 
+    container = document.querySelector('.result'),
+    loading = document.querySelector('.loading-container')
+    
   removeChildren(container)
 
   const

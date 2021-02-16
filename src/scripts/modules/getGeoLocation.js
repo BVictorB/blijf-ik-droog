@@ -1,11 +1,13 @@
 import getData from './getData'
 import { locationAPIKey, locationEndpoint } from '../config/api'
-import { city, loading } from '../config/elements'
 
 const getGeoLocation = (position) => {
   const 
     lat = position.coords.latitude,
-    lng = position.coords.longitude
+    lng = position.coords.longitude,
+    form = document.querySelector('form'),
+    city = form.querySelectorAll('input')[0],
+    loading = document.querySelector('.loading-container')
   
   loading.classList.remove('loading')
 

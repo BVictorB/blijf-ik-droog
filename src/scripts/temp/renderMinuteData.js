@@ -1,4 +1,4 @@
-import removeChildren from './removeChildren'
+import removeChildren from '../modules/removeChildren'
 
 const renderMinuteData = (data) => {
   const 
