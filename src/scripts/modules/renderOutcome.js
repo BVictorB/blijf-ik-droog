@@ -1,8 +1,9 @@
 import { createElement, removeChildren } from './'
+import { navigator } from '../router'
 import wetShirt from '../../images/wet-shirt.png'
 import dryShirt from '../../images/dry-shirt.png'
 
-const renderOutcome = (minutes) => {
+const renderOutcome = (minutes, city, coords) => {
   const 
     container = document.querySelector('.result'),
     loading = document.querySelector('.loading-container')
@@ -22,6 +23,21 @@ const renderOutcome = (minutes) => {
   createElement('img', {
     src: minutes ? dryShirt : wetShirt,
     classNames: ['result-image'],
+    parent: container
+  })
+
+  createElement('button', {
+    text: `More info about ${city}`,
+    attributes: [
+      {
+        attr: 'route',
+        val: `/location?lat=${coords.lat}&lng=${coords.lng}`
+      }
+    ],
+    eventListener: {
+      on: 'click',
+      func: navigator
+    },
     parent: container
   })
 

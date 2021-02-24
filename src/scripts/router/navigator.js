@@ -1,6 +1,7 @@
 import { handleRoute } from './'
+import { routes } from './router'
 
-const navigator = (e, routes) => {
+const navigator = (e) => {
   const 
     view = document.querySelector('.view'),
     routePath = e.target.attributes.route.value,

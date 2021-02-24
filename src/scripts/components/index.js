@@ -1,0 +1,5 @@
+export { default as header } from './partials/header'
+export { default as footer } from './partials/footer'
+export { default as load } from './partials/load'
+export { default as homeScreen } from './screens/homeScreen'
+export { default as locationScreen } from './screens/locationScreen'

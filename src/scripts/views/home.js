@@ -1,10 +1,13 @@
-import { getData, renderOutcome, calcDryMinutes, getCoords, getCity } from '../modules'
+import { getData, renderOutcome, calcDryMinutes, getCoords, getCity, removeChildren } from '../modules'
 import { weatherAPIKey, weatherEndpoint, exclude } from '../config'
-import geoLocationImage from '../../images/location.png'
+import { header, footer, load, homeScreen } from '../components'
 
 const home = () => {
-  const view = document.querySelector('.view')
-  view.innerHTML = html
+  removeChildren(document.body)
+  document.body.append(load())
+  document.body.append(header())
+  document.body.append(homeScreen())
+  document.body.append(footer())
   
   const
     form = document.querySelector('form'),
@@ -23,7 +26,7 @@ const home = () => {
       weatherData = await getData(weatherURL),
       dryMinutes = calcDryMinutes(weatherData.minutely, neededMinutes.value)
     
-    renderOutcome(dryMinutes)
+    renderOutcome(dryMinutes, city.value, coords)
   })
   
   geoButton.addEventListener('click', () => {
@@ -33,21 +36,5 @@ const home = () => {
     })
   })
 }
-
-const html = `
-<form action="">
-  <label>
-    Locatie
-    <input class="city" type="text" placeholder="Locatie"/>
-    <img class="geolocation" src="${geoLocationImage}" alt="">
-  </label>
-  <label>
-    Reistijd
-    <input class="minutes" type="number" placeholder="Reistijd"/>
-  </label>
-  <button type="submit">Bekijk resultaat</button>
-</form>
-<div class="result"></div>
-`
 
 export default home
