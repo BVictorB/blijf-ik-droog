@@ -5,10 +5,12 @@ import renderMinuteData from '../temp/renderMinuteData'
 
 const location = async (lat, lng) => {
   removeChildren(document.body)
-  document.body.append(load())
-  document.body.append(header())
-  document.body.append(locationScreen())
-  document.body.append(footer())
+  document.body.append(
+    load(), 
+    header(), 
+    locationScreen(), 
+    footer()
+  )
 
   if (lat && lng) {
     const 
@@ -17,7 +19,7 @@ const location = async (lat, lng) => {
       
     renderMinuteData(weatherData.minutely)
     const city = await getCity(lat, lng)
-    console.log(city)
+    console.log(city, lat, lng)
   }
 }
 

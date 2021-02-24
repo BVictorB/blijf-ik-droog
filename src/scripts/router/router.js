@@ -1,5 +1,5 @@
 import { home, location, about } from '../views'
-import { navigator, handleRoute } from './'
+import { handleRoute } from './'
 
 export const routes = [
   {
@@ -10,6 +10,7 @@ export const routes = [
   {
     path: '/location',
     name: 'Location',
+    params: ['lat', 'lng'],
     view: location
   },
   {
@@ -20,12 +21,6 @@ export const routes = [
 ]
 
 const router = () => {
-  const buttons = document.querySelectorAll('[route]')
-  
-  buttons.forEach((button) => {
-    button.addEventListener('click', e => navigator(e, routes))
-  })
-  
   handleRoute(routes) 
 }
 

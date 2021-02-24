@@ -4,11 +4,13 @@ import { header, footer, load, homeScreen } from '../components'
 
 const home = () => {
   removeChildren(document.body)
-  document.body.append(load())
-  document.body.append(header())
-  document.body.append(homeScreen())
-  document.body.append(footer())
-  
+  document.body.append(
+    load(), 
+    header(), 
+    homeScreen(), 
+    footer()
+  )
+
   const
     form = document.querySelector('form'),
     geoButton = document.querySelector('.geolocation'),
