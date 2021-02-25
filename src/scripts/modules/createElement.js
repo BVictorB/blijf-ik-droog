@@ -1,5 +1,5 @@
-const createElement = (tag, { classNames, attributes, text, src, href, children, parent, eventListener }) => {
-  const el = document.createElement(tag)
+const createElement = (tag, { classNames, attributes, text, src, href, children, parent, eventListener, namespace }) => {
+  const el = namespace ? document.createElementNS(namespace, tag) : document.createElement(tag)
 
   classNames && classNames.forEach(className => el.classList.add(className))
   attributes && attributes.forEach(attribute => el.setAttribute(attribute.attr, attribute.val))

@@ -9,7 +9,7 @@ const routes = [
   {
     path: '/location',
     name: 'Location',
-    params: ['lat', 'lng'],
+    params: ['lat', 'lng', 'country'],
     view: location
   }
 ]

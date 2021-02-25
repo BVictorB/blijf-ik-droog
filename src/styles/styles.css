@@ -185,3 +185,7 @@ label {
     opacity: .1;
   }
 }
+
+.country-flag {
+  width: 100px;
+}

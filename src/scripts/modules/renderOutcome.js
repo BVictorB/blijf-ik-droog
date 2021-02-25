@@ -27,7 +27,7 @@ const renderOutcome = (minutes, city, coords) => {
   })
 
   createElement('button', {
-    text: `More info about ${city}`,
+    text: `Meer informatie over ${city}`,
     attributes: [
       {
         attr: 'route',
