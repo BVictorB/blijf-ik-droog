@@ -1,5 +1,4 @@
-import { handleRoute } from './'
-import { routes } from './router'
+import { router, routes } from '.'
 
 const navigator = (e) => {
   const 
@@ -11,7 +10,7 @@ const navigator = (e) => {
     console.log('404')
   } else {
     window.history.pushState({}, '', routePath)
-    handleRoute(routes)
+    router()
   }
 }
 

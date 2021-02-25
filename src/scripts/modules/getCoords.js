@@ -1,4 +1,4 @@
-import { getData } from './'
+import { getData } from '.'
 import { locationAPIKey, locationEndpoint } from '../config'
 
 const getCoords = (place) => {

@@ -1,4 +1,4 @@
-import { createElement, removeChildren } from './'
+import { createElement, removeChildren } from '.'
 import { navigator } from '../router'
 import wetShirt from '../../images/wet-shirt.png'
 import dryShirt from '../../images/dry-shirt.png'

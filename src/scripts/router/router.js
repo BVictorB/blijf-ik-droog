@@ -1,27 +1,19 @@
-import { home, location, about } from '../views'
-import { handleRoute } from './'
-
-export const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    view: home
-  },
-  {
-    path: '/location',
-    name: 'Location',
-    params: ['lat', 'lng'],
-    view: location
-  },
-  {
-    path: '/about',
-    name: 'About',
-    view: about
-  }
-]
+import { routes } from '.'
 
 const router = () => {
-  handleRoute(routes) 
+  const 
+    urlParameter = new URLSearchParams(window.location.search),
+    currentPath = window.location.pathname,
+    route = routes.filter((route) => route.path === currentPath)[0]
+  
+  if (route && route.params) {
+    const params = route.params.map(param => urlParameter.get(param))
+    route.view(...params)
+  } else if (route) {
+    route.view()
+  } else {
+    console.log('404')
+  }
 }
 
 export default router

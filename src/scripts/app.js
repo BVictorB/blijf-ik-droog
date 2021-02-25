@@ -1,3 +1,3 @@
-import router from './router/router'
+import { router } from './router'
 
 router()
