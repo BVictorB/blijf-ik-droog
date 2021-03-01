@@ -21,7 +21,7 @@ This API is only used to get a list of all countries in Europe with their flags 
 
 ## Interaction Diagram
 
-...
+![](https://user-images.githubusercontent.com/10921830/109535340-bdb30b00-7abc-11eb-94f9-82bc2f5b19e3.png)
 
 ## Process
 
