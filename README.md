@@ -1,6 +1,6 @@
 # Blijf ik droog?
 
-About this project/concept...
+As the name of this course implies, this course is about building a web app from scratch. The name of this project is 'Blijf ik droog?' ('Will i stay dry?'), I wanted to create a very simple web application that calculates if you stay dry when walking/cycling from your current location. This is something that I would use myself since I always check the Buienradar.nl graph to check if I will get home/to my desired location dry. The thing is that this takes effort since you have to look at a graph and calculate the timing yourself. This project gives you the time of departure itself so you don't have to worry about the rain. It makes a very simple task easy as pie.
 
 ## API's
 
@@ -25,7 +25,8 @@ This API is only used to get a list of all countries in Europe with their flags 
 
 ## Process
 
-...
+I started creating the logic for calculating the 'dry minutes' and departure time for the user using the OpenWeatherMap API. After I got this working I created an input where you can just type in any location (city, country, village, etc..), this also gets you the same output as using the coordinates, but has better interaction since you don't have to look up the coordinates of your location. After this I also added a button that gets your current geolocation, this improves the interaction even further since you dont have to type in anything to get the correct location. 
+After I got all of this working, I started working on client-side routing. I did this from scratch. I never did this before, but it was so much easier than I expected. I improved my project/folder structuring quite some times, added views and modules, and basically removed all HTML to render every single thing with JavaScript.
 
 ## Installation
 
