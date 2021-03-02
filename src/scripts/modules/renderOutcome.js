@@ -18,11 +18,11 @@ const renderOutcome = (minutes, city, coords) => {
   let departMessage
 
   if (minutes && minutes !== 1) {
-    departMessage = `Als je om ${formatDepartTime} vertrekt blijf je droog.`
+    departMessage = `Als je om ${formatDepartTime} vertrekt blijf je droog!`
   } else if (minutes === 1) {
-    departMessage = 'Als je nu vertrekt blijf je droog'
+    departMessage = 'Als je nu vertrekt blijf je droog!'
   } else {
-    departMessage = 'Je kunt het komende uur niet vertrekken zonder nat te worden.'
+    departMessage = 'Je kunt het komende uur niet vertrekken zonder nat te worden...'
   }
   
   createElement('h2', {

@@ -1,4 +1,5 @@
 import { router, routes } from '.'
+import { fourOfour } from '../views'
 
 const navigator = (e) => {
   const 
@@ -7,8 +8,7 @@ const navigator = (e) => {
     routeInfo = routes.filter((route) => route.path === formattedRoutePath)[0]
 
   if (!routeInfo) {
-    // TODO: Render 404 view here
-    console.log('404')
+    fourOfour()
   } else {
     window.history.pushState({}, '', routePath)
     router()

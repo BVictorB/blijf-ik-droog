@@ -22,7 +22,7 @@ const homeScreen = () => {
       },
       {
         attr: 'placeholder',
-        val: 'Locatie'
+        val: 'Huidige locatie'
       }
     ]
   })
@@ -46,7 +46,7 @@ const homeScreen = () => {
       },
       {
         attr: 'placeholder',
-        val: 'Reistijd'
+        val: 'Reistijd in minuten'
       }
     ]
   })

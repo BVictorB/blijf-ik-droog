@@ -38,14 +38,26 @@ const home = () => {
     }
 
     loading.classList.add('loading')
+
+    const coords = await getCoords(city.value)
+
+    if (!coords) {
+      loading.classList.remove('loading')
+      locationError.classList.add('error')
+      return
+    }
   
     const 
-      coords = await getCoords(city.value),
       weatherURL = `${weatherEndpoint}lat=${coords.lat}&lon=${coords.lng}&exclude=${exclude}&appid=${weatherAPIKey}`,
-      weatherData = await getData(weatherURL),
-      dryMinutes = calcDryMinutes(weatherData.minutely, neededMinutes.value)
+      weatherData = await getData(weatherURL)
+
+    if (!weatherData) {
+      loading.classList.remove('loading')
+      locationError.classList.add('error')
+      return
+    }
     
-    renderOutcome(dryMinutes, city.value, coords)
+    renderOutcome(calcDryMinutes(weatherData.minutely, neededMinutes.value), city.value, coords)
   })
   
   geoButton.addEventListener('click', () => {

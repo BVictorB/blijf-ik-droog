@@ -1,4 +1,5 @@
 import { routes } from '.'
+import { fourOfour } from '../views'
 
 const router = () => {
   const 
@@ -12,8 +13,7 @@ const router = () => {
   } else if (route) {
     route.view()
   } else {
-    // TODO: Render 404 view here
-    console.log('404')
+    fourOfour()
   }
 }
 

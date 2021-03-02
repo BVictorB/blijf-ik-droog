@@ -8,7 +8,7 @@ const getCity = (lat, lng) => {
 
   return getData(`${locationEndpoint}q=${lat}+${lng}&key=${locationAPIKey}`)
     .then(data => data.results[0].components.city)
-    .catch(err => console.log(err)) // TODO: create proper error handling
+    .catch(err => null)
 }
 
 export default getCity
