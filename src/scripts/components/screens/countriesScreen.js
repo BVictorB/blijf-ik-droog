@@ -17,7 +17,7 @@ const countriesScreen = async () => {
   })
   
   const elements = countries.map(country => {
-    const title = createElement('p', {
+    const title = createElement('h4', {
       text: country.country
     })
 
@@ -41,12 +41,18 @@ const countriesScreen = async () => {
     })
 
     return createElement('div', {
+      classNames: ['country-block'],
       children: [title, image, button]
     })
   })
 
-  const container = createElement('div', {
+  const countryContainer = createElement('div', {
+    classNames: ['country-container'],
     children: elements
+  })
+
+  const container = createElement('main', {
+    children: [countryContainer]
   })
 
   return container

@@ -2,6 +2,17 @@ import { createElement } from '../../modules'
 import geoLocationImage from '../../../images/location.png'
 
 const homeScreen = () => {
+  const locationError = createElement('p', {
+    text: 'Vul alsjeblieft een geldige locatie in.',
+    classNames: ['location-error']
+  })
+
+  const minuteError = createElement('p', {
+    text: 'Vul alsjeblieft een geldig aantal minuten in (<60).',
+    classNames: ['minute-error']
+  })
+
+
   const locationInput = createElement('input', {
     classNames: ['city'],
     attributes: [
@@ -23,7 +34,7 @@ const homeScreen = () => {
 
   const locationLabel = createElement('label', {
     text: 'Locatie',
-    children: [locationInput, locationImg]
+    children: [locationInput, locationImg, locationError]
   })
 
   const timeInput = createElement('input', {
@@ -42,7 +53,7 @@ const homeScreen = () => {
 
   const timeLabel = createElement('label', {
     text: 'Reistijd',
-    children: [timeInput]
+    children: [timeInput, minuteError]
   })
 
   const button = createElement('button', {

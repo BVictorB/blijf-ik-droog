@@ -14,9 +14,19 @@ const renderOutcome = (minutes, city, coords) => {
     currentDate = new Date(),
     departTime = new Date(currentDate.getTime() + (minutes - 1) * 60000),
     formatDepartTime = departTime.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})
+
+  let departMessage
+
+  if (minutes && minutes !== 1) {
+    departMessage = `Als je om ${formatDepartTime} vertrekt blijf je droog.`
+  } else if (minutes === 1) {
+    departMessage = 'Als je nu vertrekt blijf je droog'
+  } else {
+    departMessage = 'Je kunt het komende uur niet vertrekken zonder nat te worden.'
+  }
   
   createElement('h2', {
-    text: minutes ? `Als je om ${formatDepartTime} vertrekt blijf je droog.` : `Je kan het komende uur niet vertrekken zonder nat te worden.`,
+    text: departMessage,
     parent: container
   })
 

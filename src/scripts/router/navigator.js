@@ -7,6 +7,7 @@ const navigator = (e) => {
     routeInfo = routes.filter((route) => route.path === formattedRoutePath)[0]
 
   if (!routeInfo) {
+    // TODO: Render 404 view here
     console.log('404')
   } else {
     window.history.pushState({}, '', routePath)

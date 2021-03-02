@@ -6,6 +6,7 @@ const getCoords = (place) => {
 
   return getData(url)
     .then(data => data.results[0].geometry)
+    .catch(err => console.log(err)) // TODO: create proper error handling
 }
 
 export default getCoords

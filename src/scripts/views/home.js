@@ -16,10 +16,27 @@ const home = () => {
     geoButton = document.querySelector('.geolocation'),
     city = form.querySelectorAll('input')[0],
     neededMinutes = form.querySelectorAll('input')[1],
-    loading = document.querySelector('.loading-container')
+    loading = document.querySelector('.loading-container'),
+    minuteError = document.querySelector('.minute-error'),
+    locationError = document.querySelector('.location-error')
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault()
+
+    if (city.value) {
+      locationError.classList.remove('error')
+    } else {
+      locationError.classList.add('error')
+      return
+    }
+
+    if (neededMinutes.value && neededMinutes.value <= 60) {
+      minuteError.classList.remove('error')
+    } else {
+      minuteError.classList.add('error')
+      return
+    }
+
     loading.classList.add('loading')
   
     const 
