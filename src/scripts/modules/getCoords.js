@@ -6,7 +6,7 @@ const getCoords = (place) => {
 
   return getData(url)
     .then(data => data.results[0].geometry)
-    .catch(err => null)
+    .catch(_ => null)
 }
 
 export default getCoords

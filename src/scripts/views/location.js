@@ -12,8 +12,7 @@ const location = async (lat, lng, country) => {
   if (lat && lng) {
     const 
       weatherURL = `${weatherEndpoint}lat=${lat}&lon=${lng}&exclude=${exclude}&appid=${weatherAPIKey}`,
-      weatherData = await getData(weatherURL),
-      currentDate = new Date()
+      weatherData = await getData(weatherURL)
 
     const screen = detailScreen(country ? country : await getCity(lat, lng), weatherData.minutely)
     document.body.append(screen)

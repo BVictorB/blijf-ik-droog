@@ -26,7 +26,7 @@ const header = () => {
   })
 
   const locationBtn = createElement('button', {
-    text: 'Location',
+    text: 'Landen',
     attributes: [
       {
         attr: 'route',

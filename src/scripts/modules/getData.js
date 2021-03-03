@@ -1,7 +1,7 @@
 const getData = (url) => {
   return fetch(url)
     .then(res => res.json())
-    .catch(err => null)
+    .catch(_ => null)
 }
 
 export default getData

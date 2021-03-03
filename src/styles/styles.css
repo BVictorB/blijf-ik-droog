@@ -211,7 +211,12 @@ label p {
 }
 
 svg {
-  border: 1px solid black;
+  border: 2px solid black;
+  margin-top: 32px;
+}
+
+svg rect {
+  fill: #1D976C;
 }
 
 footer {

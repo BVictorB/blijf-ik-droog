@@ -1,10 +1,3 @@
-{/* <div class="loading-container">
-  <div>
-    <div class="loading-ring"><div></div><div></div><div></div><div></div></div>
-    <h2 class="loading-text">Loading<span>.</span><span>.</span><span>.</span></h2>
-  </div>
-</div> */}
-
 import { createElement } from '../../modules'
 
 const load = () => {
