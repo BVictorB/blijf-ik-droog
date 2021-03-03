@@ -2,3 +2,6 @@ notes.md
 .DS_Store
 .cache
 /dist
+/node_modules
+/dist
+/.netlify

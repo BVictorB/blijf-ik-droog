@@ -13,29 +13,29 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{".":"uu2P","../config":"s0Tx"}],"LxOH":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;const e=e=>{for(;e.firstChild;)e.removeChild(e.firstChild)};var t=e;exports.default=t;
 },{}],"ZMqA":[function(require,module,exports) {
-module.exports="/blijf-ik-droog/wet-shirt.cde7df9a.png";
+module.exports="wet-shirt.cde7df9a.png";
 },{}],"uvHa":[function(require,module,exports) {
-module.exports="/blijf-ik-droog/dry-shirt.2e37475f.png";
+module.exports="dry-shirt.2e37475f.png";
 },{}],"zkbS":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var e=require("."),t=require("../router"),r=o(require("../../images/wet-shirt.png")),n=o(require("../../images/dry-shirt.png"));function o(e){return e&&e.__esModule?e:{default:e}}const a=(o,a,i)=>{const l=document.querySelector(".result"),u=document.querySelector(".loading-container");(0,e.removeChildren)(l);const c=new Date,s=new Date(c.getTime()+6e4*(o-1)).toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"});let d;d=o&&1!==o?"Als je om ".concat(s," vertrekt blijf je droog!"):1===o?"Als je nu vertrekt blijf je droog!":"Je kunt het komende uur niet vertrekken zonder nat te worden...",(0,e.createElement)("h2",{text:d,parent:l}),(0,e.createElement)("img",{src:o?n.default:r.default,classNames:["result-image"],parent:l}),(0,e.createElement)("button",{text:"Meer informatie over ".concat(a),attributes:[{attr:"route",val:"/location?lat=".concat(i.lat,"&lng=").concat(i.lng)}],eventListener:{on:"click",func:t.navigator},parent:l}),u.classList.remove("loading")};var i=a;exports.default=i;
 },{".":"uu2P","../router":"xF9H","../../images/wet-shirt.png":"ZMqA","../../images/dry-shirt.png":"uvHa"}],"uu2P":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),Object.defineProperty(exports,"calcDryMinutes",{enumerable:!0,get:function(){return e.default}}),Object.defineProperty(exports,"createElement",{enumerable:!0,get:function(){return r.default}}),Object.defineProperty(exports,"getCoords",{enumerable:!0,get:function(){return t.default}}),Object.defineProperty(exports,"getData",{enumerable:!0,get:function(){return n.default}}),Object.defineProperty(exports,"getCity",{enumerable:!0,get:function(){return u.default}}),Object.defineProperty(exports,"removeChildren",{enumerable:!0,get:function(){return o.default}}),Object.defineProperty(exports,"renderOutcome",{enumerable:!0,get:function(){return i.default}});var e=a(require("./calcDryMinutes")),r=a(require("./createElement")),t=a(require("./getCoords")),n=a(require("./getData")),u=a(require("./getCity")),o=a(require("./removeChildren")),i=a(require("./renderOutcome"));function a(e){return e&&e.__esModule?e:{default:e}}
 },{"./calcDryMinutes":"wqgI","./createElement":"bop1","./getCoords":"SIFP","./getData":"tgpC","./getCity":"ZW5B","./removeChildren":"LxOH","./renderOutcome":"zkbS"}],"J8r5":[function(require,module,exports) {
-module.exports="/blijf-ik-droog/umbrella.e94f7530.png";
+module.exports="umbrella.e94f7530.png";
 },{}],"Avas":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var e=require("../../modules"),t=require("../../router"),r=n(require("../../../images/umbrella.png"));function n(e){return e&&e.__esModule?e:{default:e}}const a=()=>{const n=(0,e.createElement)("h1",{text:"Blijf ik droog?"}),a=(0,e.createElement)("img",{src:r.default}),o=(0,e.createElement)("button",{text:"Home",attributes:[{attr:"route",val:"/"}],eventListener:{on:"click",func:t.navigator}}),u=(0,e.createElement)("button",{text:"Landen",attributes:[{attr:"route",val:"/location"}],eventListener:{on:"click",func:t.navigator}});return(0,e.createElement)("header",{children:[a,n,o,u]})};var o=a;exports.default=o;
 },{"../../modules":"uu2P","../../router":"xF9H","../../../images/umbrella.png":"J8r5"}],"Mt52":[function(require,module,exports) {
-module.exports="/blijf-ik-droog/victor.dbc1f982.png";
+module.exports="victor.dbc1f982.png";
 },{}],"SSPC":[function(require,module,exports) {
-module.exports="/blijf-ik-droog/linkedin.96e90d27.png";
+module.exports="linkedin.96e90d27.png";
 },{}],"SrIw":[function(require,module,exports) {
-module.exports="/blijf-ik-droog/github.10ef161f.png";
+module.exports="github.10ef161f.png";
 },{}],"jBss":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var e=require("../../modules"),t=c(require("../../../images/victor.png")),r=c(require("../../../images/linkedin.png")),a=c(require("../../../images/github.png"));function c(e){return e&&e.__esModule?e:{default:e}}const i=()=>{const c=(0,e.createElement)("img",{classNames:["avatar"],src:t.default}),i=(0,e.createElement)("h3",{text:"Victor Boucher"}),n=(0,e.createElement)("h4",{text:"Frontend developer"}),l=(0,e.createElement)("img",{classNames:["icon"],src:a.default}),s=(0,e.createElement)("img",{classNames:["icon"],src:r.default}),o=(0,e.createElement)("a",{href:"https://github.com/BVictorB",attributes:[{attr:"target",val:"_blank"}],children:[l]}),u=(0,e.createElement)("a",{href:"https://www.linkedin.com/in/victor-boucher-18267813b/",attributes:[{attr:"target",val:"_blank"}],children:[s]});return(0,e.createElement)("footer",{children:[c,i,n,o,u]})};var n=i;exports.default=n;
 },{"../../modules":"uu2P","../../../images/victor.png":"Mt52","../../../images/linkedin.png":"SSPC","../../../images/github.png":"SrIw"}],"UCTu":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var e=require("../../modules");const t=()=>{const t=(0,e.createElement)("div",{}),r=(0,e.createElement)("div",{classNames:["loading-ring"],children:[t,t,t,t]}),a=(0,e.createElement)("span",{text:"."}),n=(0,e.createElement)("h2",{classNames:["loading-text"],text:"Loading",children:[a,a,a]}),l=(0,e.createElement)("div",{children:[r,n]});return(0,e.createElement)("div",{classNames:["loading-container"],children:[l]})};var r=t;exports.default=r;
 },{"../../modules":"uu2P"}],"vPfT":[function(require,module,exports) {
-module.exports="/blijf-ik-droog/location.2d2625d1.png";
+module.exports="location.2d2625d1.png";
 },{}],"e3yT":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var e=require("../../modules"),t=a(require("../../../images/location.png"));function a(e){return e&&e.__esModule?e:{default:e}}const l=()=>{const a=(0,e.createElement)("p",{text:"Vul alsjeblieft een geldige locatie in.",classNames:["location-error"]}),l=(0,e.createElement)("p",{text:"Vul alsjeblieft een geldig aantal minuten in (<60).",classNames:["minute-error"]}),r=(0,e.createElement)("input",{classNames:["city"],attributes:[{attr:"type",val:"text"},{attr:"placeholder",val:"Huidige locatie"}]}),i=(0,e.createElement)("img",{classNames:["geolocation"],src:t.default}),n=(0,e.createElement)("label",{text:"Locatie",children:[r,i,a]}),s=(0,e.createElement)("input",{classNames:["minutes"],attributes:[{attr:"type",val:"number"},{attr:"placeholder",val:"Reistijd in minuten"}]}),c=(0,e.createElement)("label",{text:"Reistijd",children:[s,l]}),u=(0,e.createElement)("button",{text:"Bekijk resultaat",attributes:[{attr:"type",val:"submit"}]}),m=(0,e.createElement)("form",{children:[n,c,u]}),o=(0,e.createElement)("div",{classNames:["result"]});return(0,e.createElement)("main",{children:[m,o]})};var r=l;exports.default=r;
 },{"../../modules":"uu2P","../../../images/location.png":"vPfT"}],"JTCk":[function(require,module,exports) {
@@ -65,4 +65,4 @@ module.exports="/blijf-ik-droog/location.2d2625d1.png";
 },{"./router":"T7dG","./navigator":"AOMC","./routes":"g7Do"}],"dPdB":[function(require,module,exports) {
 "use strict";var r=require("./router");(0,r.router)();
 },{"./router":"xF9H"}]},{},["dPdB"], null)
-//# sourceMappingURL=/blijf-ik-droog/app.53582636.js.map
+//# sourceMappingURL=app.53582636.js.map

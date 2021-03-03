@@ -22,5 +22,8 @@
   "homepage": "https://github.com/BVictorB/web-app-from-scratch-2021#readme",
   "browserslist": [
     "since 2017-06"
-  ]
+  ],
+  "devDependencies": {
+    "cssnano": "^4.1.10"
+  }
 }
