@@ -10,12 +10,13 @@ html {
 }
 
 body {
-  height: 100%;
+  min-height: 100vh;
   background: #1D976C;
   background: -webkit-linear-gradient(to bottom, #93F9B9, #1D976C);
   background: linear-gradient(to bottom, #93F9B9, #1D976C);
   background-repeat: no-repeat;
   background-attachment: fixed;
+  position: relative;
 }
 
 header {
@@ -220,7 +221,7 @@ svg rect {
 }
 
 footer {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   height: 400px;
   width: 100%;
