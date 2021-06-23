@@ -14,11 +14,11 @@ const detailScreen = (city, data) => {
   })
 
   const bars = filteredData.map((minute, index) => {
-    const 
+    const
       barSize = minute.precipitation * 30,
       rainTime = new Date(currentDate.getTime() + (index * 10) * 60000),
-      formatRainTime = rainTime.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})
-      
+      formatRainTime = rainTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+
     const rectangle = createElement('rect', {
       attributes: [
         {

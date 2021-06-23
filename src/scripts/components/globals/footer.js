@@ -29,7 +29,7 @@ const footer = () => {
   })
 
   const githubAnchor = createElement('a', {
-    href: 'https://github.com/BVictorB',
+    href: 'https://github.com/victorboucher',
     attributes: [
       {
         attr: 'target',
